@@ -28,6 +28,13 @@ namespace BrailleConverter
                 {
                     Image<Bgr, byte> inputImg = new Image<Bgr, byte>(ofd.FileName);
                     imageBox1.Image = inputImg;
+
+                    Image<Gray, byte> imggray = inputImg.Convert<Gray, byte>();
+
+                    Image<Gray, byte> erode1 = imggray.Erode(4);
+                    Image<Gray, byte> erode2 = erode1.InRange(new Gray(70), new Gray(220));
+
+                    imageBox2.Image = erode2;
                 }
             }
             catch (Exception ex)
@@ -36,4 +43,5 @@ namespace BrailleConverter
                 MessageBox.Show(ex.Message);
             }
         }
+    }
 }
