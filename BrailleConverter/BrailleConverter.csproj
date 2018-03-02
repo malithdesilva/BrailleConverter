@@ -59,6 +59,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CellSegmenting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CellSegmenting.Designer.cs">
+      <DependentUpon>CellSegmenting.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,6 +79,9 @@
     <Compile Include="Simulate.Designer.cs">
       <DependentUpon>Simulate.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="CellSegmenting.resx">
+      <DependentUpon>CellSegmenting.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
