@@ -1,13 +1,16 @@
-﻿using Emgu.CV;
+﻿using BrailleConverter.DB;
+using Emgu.CV;
 using Emgu.CV.Structure;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -15,13 +18,18 @@ namespace BrailleConverter
 {
     public partial class Overall : Form
     {
+       
         public Overall()
         {
             InitializeComponent();
         }
+        string full = "";
         Image<Gray, byte> erode2;
         List<Image<Gray, byte>> imglist = new List<Image<Gray, byte>>();
         List<string> binaris = new List<string>();
+        List<string> unicodelist = new List<string>();
+
+        BrailleEntities DB = new BrailleEntities();
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
@@ -29,6 +37,7 @@ namespace BrailleConverter
                 OpenFileDialog ofd = new OpenFileDialog();
                 if (ofd.ShowDialog() == DialogResult.OK)
                 {
+                    full = "";
                     Image<Bgr, byte> inputImg = new Image<Bgr, byte>(ofd.FileName);
                     imageBox1.Image = inputImg;
 
@@ -36,7 +45,7 @@ namespace BrailleConverter
 
                     Image<Gray, byte> erode1 = imggray.Erode(2);
                     erode2 = erode1.InRange(new Gray(70), new Gray(220));
-                   
+
                     //int x = 20;
                     //int z = 20;
                     //for (int v = 20; v < inputImg.Height; v = v + 85)
@@ -61,12 +70,13 @@ namespace BrailleConverter
 
                     int bb = 1;
                     int ye = 0;
-                    for (int y = 20; y < 2311; y = y + 85)
+                    /* for (int y = 20; y < 2311; y = y + 85)*/
+                    for (int y = 20; y < inputImg.Height; y = y + 85)
                     {
                         int xe = 0;
                         ye = ye + 1;
                         //for (int x = 143; x < 1700; x = x+44+6)
-                        for (int x = 143; x < 1700; x = x + 33 + 18)
+                        for (int x = 143; x <inputImg.Width; x = x + 33 + 18)
                         {
 
                             Image<Gray, byte> img1 = erode2;
@@ -102,7 +112,7 @@ namespace BrailleConverter
                             float avg5 = 0;
                             float meen5 = 0;
 
-                           
+
                             for (int v = 0; v < img1.Height; v++)
                             {
                                 for (int u = 0; u < img1.Width; u++)
@@ -234,12 +244,24 @@ namespace BrailleConverter
                             }
 
 
-                            string values = bb+"/"+a1.ToString() + "," + a2.ToString() + "," + a3.ToString() + "," + a4.ToString() + "," + a5.ToString() + "," + a6.ToString();
-                            imglist.Add(img1);
+
+                            string values = 2 + a1.ToString() + a2.ToString() + a3.ToString() + a4.ToString() + a5.ToString() + a6.ToString();
+                            int val = Convert.ToInt32(values);
+                            string unicode = DB.mappings.Where(n => n.Bincode == val).Select(c=>c.Unicode).FirstOrDefault();
+
+                           
                             bb = bb + 1;
                             xe = xe + 1;
                             binaris.Add(values);
-                           
+                            if (unicode != null)
+                            {
+                                unicodelist.Add(unicode);
+                            }
+                            else
+                            {
+                                unicodelist.Add("null");
+                            }
+
                             img1.Bitmap.Save(@"E:\emgu\MyPic" + xe + "," + ye + ".jpg");
 
                         }
@@ -257,8 +279,29 @@ namespace BrailleConverter
 
                         }
                     }
+                    string sinhala;
+                    foreach (var item in unicodelist)
+                    {
+                       
+                        if (item!="null")
+                        {
+                            int n = int.Parse(item, NumberStyles.AllowHexSpecifier);
+                             sinhala = ((char)n).ToString();
+                        }
+                        else
+                        {
+                            sinhala = "\u002E";
+                        }
+                        
 
-                    imageBox2.Image = erode2;
+                        full = full + sinhala;
+                        
+                    }
+                    label1.Text =  full;
+                    textBox1.Text = full;
+                    richTextBox1.Text = full;
+                    label2.Text = "\u0D9A";
+                   
                 }
             }
             catch (Exception ex)
@@ -270,7 +313,17 @@ namespace BrailleConverter
 
         private void Overall_Load(object sender, EventArgs e)
         {
-            label1.Text = "\u0D85 \u0D86";
+            //string io = "\u0D85 \u0D86";
+            //label1.Text = io;
+            label2.Text = "\u0D9A";
+            richTextBox1.Text = "\x0D9A";
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            show form = new show(full);
+            form.Show();
         }
     }
 }

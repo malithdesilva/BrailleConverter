@@ -53,3 +53,8 @@ C:\Users\Mc-Malith\Documents\BrailleConverter\BrailleConverter\BrailleConverter\
 C:\Users\Mc-Malith\Documents\BrailleConverter\BrailleConverter\BrailleConverter\obj\Debug\BrailleConverter.Simulate.resources
 C:\Users\Mc-Malith\Documents\BrailleConverter\BrailleConverter\BrailleConverter\obj\Debug\BrailleConverter.CellSegmenting.resources
 C:\Users\Mc-Malith\Documents\BrailleConverter\BrailleConverter\BrailleConverter\obj\Debug\BrailleConverter.Overall.resources
+C:\Users\Mc-Malith\Documents\BrailleConverter\BrailleConverter\BrailleConverter\bin\Debug\EntityFramework.dll
+C:\Users\Mc-Malith\Documents\BrailleConverter\BrailleConverter\BrailleConverter\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Mc-Malith\Documents\BrailleConverter\BrailleConverter\BrailleConverter\bin\Debug\EntityFramework.xml
+C:\Users\Mc-Malith\Documents\BrailleConverter\BrailleConverter\BrailleConverter\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Mc-Malith\Documents\BrailleConverter\BrailleConverter\BrailleConverter\obj\Debug\BrailleConverter.show.resources
