@@ -16,7 +16,7 @@ namespace BrailleConverter
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new CellSegmenting());
+            Application.Run(new Overall());
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace BrailleConverter
 {
-    partial class CellSegmenting
+    partial class Overall
     {
         /// <summary>
         /// Required designer variable.
@@ -33,8 +33,7 @@
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.imageBox1 = new Emgu.CV.UI.ImageBox();
             this.imageBox2 = new Emgu.CV.UI.ImageBox();
-            this.sgmntToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.simulateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imageBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageBox2)).BeginInit();
@@ -43,12 +42,10 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.openToolStripMenuItem,
-            this.sgmntToolStripMenuItem,
-            this.simulateToolStripMenuItem});
+            this.openToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1082, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(829, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -61,45 +58,42 @@
             // 
             // imageBox1
             // 
-            this.imageBox1.Location = new System.Drawing.Point(12, 27);
+            this.imageBox1.Location = new System.Drawing.Point(12, 47);
             this.imageBox1.Name = "imageBox1";
-            this.imageBox1.Size = new System.Drawing.Size(529, 389);
+            this.imageBox1.Size = new System.Drawing.Size(394, 365);
             this.imageBox1.TabIndex = 2;
             this.imageBox1.TabStop = false;
             // 
             // imageBox2
             // 
-            this.imageBox2.Location = new System.Drawing.Point(547, 27);
+            this.imageBox2.Location = new System.Drawing.Point(412, 47);
             this.imageBox2.Name = "imageBox2";
-            this.imageBox2.Size = new System.Drawing.Size(529, 389);
+            this.imageBox2.Size = new System.Drawing.Size(394, 365);
             this.imageBox2.TabIndex = 3;
             this.imageBox2.TabStop = false;
             // 
-            // sgmntToolStripMenuItem
+            // label1
             // 
-            this.sgmntToolStripMenuItem.Name = "sgmntToolStripMenuItem";
-            this.sgmntToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
-            this.sgmntToolStripMenuItem.Text = "Segemnt";
-            this.sgmntToolStripMenuItem.Click += new System.EventHandler(this.sgmntToolStripMenuItem_Click);
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(284, 10);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "label1";
             // 
-            // simulateToolStripMenuItem
-            // 
-            this.simulateToolStripMenuItem.Name = "simulateToolStripMenuItem";
-            this.simulateToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
-            this.simulateToolStripMenuItem.Text = "simulate";
-            this.simulateToolStripMenuItem.Click += new System.EventHandler(this.simulateToolStripMenuItem_Click);
-            // 
-            // CellSegmenting
+            // Overall
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1082, 490);
+            this.ClientSize = new System.Drawing.Size(829, 513);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.imageBox2);
             this.Controls.Add(this.imageBox1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "CellSegmenting";
-            this.Text = "CellSegmenting";
+            this.Name = "Overall";
+            this.Text = "Overall";
+            this.Load += new System.EventHandler(this.Overall_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imageBox1)).EndInit();
@@ -115,7 +109,6 @@
         private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
         private Emgu.CV.UI.ImageBox imageBox1;
         private Emgu.CV.UI.ImageBox imageBox2;
-        private System.Windows.Forms.ToolStripMenuItem sgmntToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem simulateToolStripMenuItem;
+        private System.Windows.Forms.Label label1;
     }
 }

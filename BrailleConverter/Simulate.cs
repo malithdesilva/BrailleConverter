@@ -58,15 +58,15 @@ namespace BrailleConverter
                     {
                         for (int u = 0; u < imggray.Width; u++)
                         {
-                            //byte a = imggray.Data[v, u, 0]; //Get Pixel Color | fast way
-                            //if (u == 22)
-                            //{
-                            //    imggray.Data[v, u, 0] = 255; //Set Pixel Color | fast way
-                            //}
-                            //if (v == 20 || v == 40)
-                            //{
-                            //    imggray.Data[v, u, 0] = 255; //Set Pixel Color | fast way
-                            //}
+                            byte a = imggray.Data[v, u, 0]; //Get Pixel Color | fast way
+                            if (u == 22)
+                            {
+                                imggray.Data[v, u, 0] = 230; //Set Pixel Color | fast way
+                            }
+                            if (v == 20 || v == 40)
+                            {
+                                imggray.Data[v, u, 0] = 230; //Set Pixel Color | fast way
+                            }
 
                             ///row 1 column 1
                             if (u <= 22 && v < 20)
@@ -186,7 +186,7 @@ namespace BrailleConverter
 
 
                     string values = a1.ToString() + "," + a2.ToString() + "," + a3.ToString() + "," + a4.ToString() + "," + a5.ToString() + "," + a6.ToString();
-
+                    label1.Text = values;
                     imageBox1.Image = imggray;
 
 

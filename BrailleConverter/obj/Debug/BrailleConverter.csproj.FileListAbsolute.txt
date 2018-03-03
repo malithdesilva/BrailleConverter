@@ -52,3 +52,4 @@ C:\Users\Mc-Malith\Documents\BrailleConverter\BrailleConverter\BrailleConverter\
 C:\Users\Mc-Malith\Documents\BrailleConverter\BrailleConverter\BrailleConverter\obj\Debug\BrailleConverter.pdb
 C:\Users\Mc-Malith\Documents\BrailleConverter\BrailleConverter\BrailleConverter\obj\Debug\BrailleConverter.Simulate.resources
 C:\Users\Mc-Malith\Documents\BrailleConverter\BrailleConverter\BrailleConverter\obj\Debug\BrailleConverter.CellSegmenting.resources
+C:\Users\Mc-Malith\Documents\BrailleConverter\BrailleConverter\BrailleConverter\obj\Debug\BrailleConverter.Overall.resources
