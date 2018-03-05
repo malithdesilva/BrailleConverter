@@ -92,6 +92,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Final1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Final1.Designer.cs">
+      <DependentUpon>Final1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,6 +126,9 @@
     </Compile>
     <EmbeddedResource Include="CellSegmenting.resx">
       <DependentUpon>CellSegmenting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Final1.resx">
+      <DependentUpon>Final1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

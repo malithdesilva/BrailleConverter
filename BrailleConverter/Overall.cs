@@ -32,6 +32,14 @@ namespace BrailleConverter
         BrailleEntities DB = new BrailleEntities();
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            //full = null;
+            //erode2 = null;
+            //imglist = null;
+            //binaris = null;
+            //unicodelist = null;
+            label1.Text = "";
+            textBox1.Text = "";
+            richTextBox1.Text = "";
             try
             {
                 OpenFileDialog ofd = new OpenFileDialog();

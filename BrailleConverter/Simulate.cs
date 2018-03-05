@@ -14,6 +14,8 @@ namespace BrailleConverter
 {
     public partial class Simulate : Form
     {
+        Image<Gray, byte> imggray;
+        Image<Bgr, byte> inputImg;
         public Simulate()
         {
             InitializeComponent();
@@ -26,7 +28,8 @@ namespace BrailleConverter
                 OpenFileDialog ofd = new OpenFileDialog();
                 if (ofd.ShowDialog() == DialogResult.OK)
                 {
-                    Image<Bgr, byte> inputImg = new Image<Bgr, byte>(ofd.FileName);
+                    inputImg = new Image<Bgr, byte>(ofd.FileName);
+
                     //List<byte> pos1 = new List<byte>();
                     int a1 = 0;
                     int a2 = 0;
@@ -53,7 +56,7 @@ namespace BrailleConverter
                     float avg5 = 0;
                     float meen5 = 0;
 
-                    Image<Gray, byte> imggray = inputImg.Convert<Gray, byte>();
+                    imggray = inputImg.Convert<Gray, byte>();
                     for (int v = 0; v < imggray.Height; v++)
                     {
                         for (int u = 0; u < imggray.Width; u++)
@@ -67,35 +70,39 @@ namespace BrailleConverter
                             {
                                 imggray.Data[v, u, 0] = 230; //Set Pixel Color | fast way
                             }
+                            if (u==140||u==141||u==142)
+                            {
+                                imggray.Data[v, u, 0] = 255;
+                            }
 
                             ///row 1 column 1
                             if (u <= 22 && v < 20)
                             {
-                               
+
                                 byte val1 = imggray.Data[v, u, 0]; //Get Pixel Color | fast way
                                 if (val1 == 255)
                                 {
                                     meen1 = meen1 + 1;
                                     avg1 = meen1 / 440;
                                 }
-                               // pos1.Add(val1);
-                                if (avg1>=0.5)
+                                // pos1.Add(val1);
+                                if (avg1 >= 0.5)
                                 {
                                     //imggray.Data[v, u, 0] = 255; //Set Pixel Color | fast way
                                     a1 = 1;
                                 }
-                               
+
                             }
 
                             ///row 1, colmn 2
                             if (u > 22 && v <= 20)
                             {
-                               
+
                                 byte val1 = imggray.Data[v, u, 0]; //Get Pixel Color | fast way
                                 if (val1 == 255)
                                 {
                                     meen2 = meen2 + 1;
-                                    avg2= meen2 / 440;
+                                    avg2 = meen2 / 440;
                                 }
                                 //pos1.Add(val1);
                                 if (avg2 >= 0.5)
@@ -107,9 +114,9 @@ namespace BrailleConverter
                             }
 
                             ///row 2 ,colmn 1
-                            if (u <= 22 && v >= 20 & v<40)
+                            if (u <= 22 && v >= 20 & v < 40)
                             {
-                               
+
                                 byte val1 = imggray.Data[v, u, 0]; //Get Pixel Color | fast way
                                 if (val1 == 255)
                                 {
@@ -128,7 +135,7 @@ namespace BrailleConverter
                             ///row 2 ,colmn 2
                             if (u > 22 && v >= 20 & v < 40)
                             {
-                               
+
                                 byte val1 = imggray.Data[v, u, 0]; //Get Pixel Color | fast way
                                 if (val1 == 255)
                                 {
@@ -143,10 +150,10 @@ namespace BrailleConverter
                                 }
 
                             }
-                             ///row 3 ,colmn 1
+                            ///row 3 ,colmn 1
                             if (u <= 22 && v >= 40)
                             {
-                               
+
                                 byte val1 = imggray.Data[v, u, 0]; //Get Pixel Color | fast way
                                 if (val1 == 255)
                                 {
@@ -165,7 +172,7 @@ namespace BrailleConverter
                             ///row 3 ,colmn 2
                             if (u > 22 && v >= 40)
                             {
-                               
+
                                 byte val1 = imggray.Data[v, u, 0]; //Get Pixel Color | fast way
                                 if (val1 == 255)
                                 {
@@ -198,6 +205,29 @@ namespace BrailleConverter
 
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var val = double.Parse(textBox1.Text);
+            imageBox1.Image = imggray.Rotate(val, new Gray(255));
+            matrixBox1.Matrix = imggray.Rotate(val, new Gray(255));
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            var val = double.Parse(textBox1.Text);
+
+            matrixBox1.Matrix = imggray.Rotate(val, new Gray(255));
+        }
+
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+            var dd = (double)numericUpDown1.Value;
+            imageBox1.Image = imggray.Rotate(dd, new Gray(255));
+           
+
+         
         }
     }
 }

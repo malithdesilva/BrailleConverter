@@ -58,3 +58,4 @@ C:\Users\Mc-Malith\Documents\BrailleConverter\BrailleConverter\BrailleConverter\
 C:\Users\Mc-Malith\Documents\BrailleConverter\BrailleConverter\BrailleConverter\bin\Debug\EntityFramework.xml
 C:\Users\Mc-Malith\Documents\BrailleConverter\BrailleConverter\BrailleConverter\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Mc-Malith\Documents\BrailleConverter\BrailleConverter\BrailleConverter\obj\Debug\BrailleConverter.show.resources
+C:\Users\Mc-Malith\Documents\BrailleConverter\BrailleConverter\BrailleConverter\obj\Debug\BrailleConverter.Final1.resources
