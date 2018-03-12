@@ -74,6 +74,12 @@
     <Compile Include="CellSegmenting.Designer.cs">
       <DependentUpon>CellSegmenting.cs</DependentUpon>
     </Compile>
+    <Compile Include="Crop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crop.Designer.cs">
+      <DependentUpon>Crop.cs</DependentUpon>
+    </Compile>
     <Compile Include="DB\mapping.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -124,8 +130,29 @@
     <Compile Include="Simulate.Designer.cs">
       <DependentUpon>Simulate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Step1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Step1.Designer.cs">
+      <DependentUpon>Step1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Step2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Step2.Designer.cs">
+      <DependentUpon>Step2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Step3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Step3.Designer.cs">
+      <DependentUpon>Step3.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="CellSegmenting.resx">
       <DependentUpon>CellSegmenting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Crop.resx">
+      <DependentUpon>Crop.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Final1.resx">
       <DependentUpon>Final1.cs</DependentUpon>
@@ -150,6 +177,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Simulate.resx">
       <DependentUpon>Simulate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Step1.resx">
+      <DependentUpon>Step1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Step2.resx">
+      <DependentUpon>Step2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Step3.resx">
+      <DependentUpon>Step3.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="DB\Model.edmx">
       <Generator>EntityModelCodeGenerator</Generator>

@@ -15,10 +15,19 @@ namespace BrailleConverter
     public partial class Simulate : Form
     {
         Image<Gray, byte> imggray;
+        Image<Gray, byte> defaltimggray;
         Image<Bgr, byte> inputImg;
         public Simulate()
         {
             InitializeComponent();
+        }
+
+        public Simulate(Image<Bgr, byte> inputImg)
+        {
+            
+            InitializeComponent();
+            defaltimggray = inputImg.Convert<Gray, byte>();
+            imageBox1.Image = defaltimggray;
         }
 
         private void openToolStripMenuItem_Click(object sender, EventArgs e)

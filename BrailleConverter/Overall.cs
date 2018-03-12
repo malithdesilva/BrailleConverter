@@ -37,8 +37,8 @@ namespace BrailleConverter
             //imglist = null;
             //binaris = null;
             //unicodelist = null;
-            label1.Text = "";
-            textBox1.Text = "";
+            //label1.Text = "";
+            //textBox1.Text = "";
             richTextBox1.Text = "";
             try
             {

@@ -59,3 +59,8 @@ C:\Users\Mc-Malith\Documents\BrailleConverter\BrailleConverter\BrailleConverter\
 C:\Users\Mc-Malith\Documents\BrailleConverter\BrailleConverter\BrailleConverter\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Mc-Malith\Documents\BrailleConverter\BrailleConverter\BrailleConverter\obj\Debug\BrailleConverter.show.resources
 C:\Users\Mc-Malith\Documents\BrailleConverter\BrailleConverter\BrailleConverter\obj\Debug\BrailleConverter.Final1.resources
+C:\Users\Mc-Malith\Documents\BrailleConverter\BrailleConverter\BrailleConverter\obj\Debug\BrailleConverter.Crop.resources
+C:\Users\Mc-Malith\Documents\BrailleConverter\BrailleConverter\BrailleConverter\obj\Debug\BrailleConverter.csproj.CopyComplete
+C:\Users\Mc-Malith\Documents\BrailleConverter\BrailleConverter\BrailleConverter\obj\Debug\BrailleConverter.Step1.resources
+C:\Users\Mc-Malith\Documents\BrailleConverter\BrailleConverter\BrailleConverter\obj\Debug\BrailleConverter.Step2.resources
+C:\Users\Mc-Malith\Documents\BrailleConverter\BrailleConverter\BrailleConverter\obj\Debug\BrailleConverter.Step3.resources
